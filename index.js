@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const authRouter = require('./routes/authRouter');
 const trainsRouter = require('./routes/trainsRouter');
 const myTrainsRouter = require('./routes/myTrainsRouter');
+const userRouter = require('./routes/userRouter');
 
 const authMiddleware = require('./middleware/authMiddleware');
 const PORT = process.env.PORT || 5000;
@@ -15,6 +16,7 @@ app.use((req, res, next) => {
 })
 app.use(express.json());
 app.use('/auth', authRouter);
+app.use('/user', authMiddleware, userRouter);
 app.use('/trains',authMiddleware, trainsRouter)
 app.use('/my-trains',authMiddleware, myTrainsRouter);
 const  start = async () => {
