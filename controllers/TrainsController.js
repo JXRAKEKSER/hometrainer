@@ -4,7 +4,6 @@ class TrainsController{
         try{
             const trainsCollection = await Train.find({});
             const trainsArray = Array.from(trainsCollection);
-            
             return res.status(200).json({trains: trainsArray})
         }catch(e){
             return res.status(500).json({message: 'ошибка на сервере'});
