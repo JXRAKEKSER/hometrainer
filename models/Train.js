@@ -8,7 +8,8 @@ const trainSchema = new Schema({
             description: {type: String, required: true},
             approaches: {type: Number, required: true},
             repetition: {type: String,required: true},
-            image: {type: String, required: true}
+            previewImage: {type: String, required: true},
+            exampleImage: {type: String, required: true}
         }
     ],
     image: {type: String, required: true}
