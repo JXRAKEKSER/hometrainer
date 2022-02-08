@@ -5,7 +5,11 @@ const trainSchema = new Schema({
     exercises: [
         {
             title: {type: String, required: true},
-            description: {type: String, required: true},
+            description: [
+                {
+                    type: String,
+                }
+            ],
             approaches: {type: Number, required: true},
             repetition: {type: String,required: true},
             previewImage: {type: String, required: true},
